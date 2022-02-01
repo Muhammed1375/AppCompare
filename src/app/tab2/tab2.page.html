@@ -1,0 +1,1477 @@
+<ion-header [translucent]="true" class ="ion-no-border">
+ 
+ <script src="tabsscript.js"></script>
+  <!---->
+  <ion-toolbar>
+   <ion-buttons slot="start">
+      <ion-button>
+          <ion-icon name="home"></ion-icon>
+      </ion-button>
+ 
+    
+   </ion-buttons>
+   
+   
+
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-item lines ="none">
+  <ion-avatar slot="start">
+
+    <img src='/assets/icon/favorite.jpg' alt ='dernier'>
+  </ion-avatar>
+  <ion-label>
+    <p>App Compare</p>
+    <h3>Entreprise de Comparaison des prix <br> des fournisseurs</h3>
+  </ion-label>
+ 
+</ion-item>
+
+<ion-content>
+ <div class="slides ion-margin-bottom">
+   <ion-slides [options]="slidesOptions">
+    <ion-slide>
+      <ion-card>
+            <ion-card-header>
+                  <div class="main">
+                    <img src='/assets/icon/ip13.jpg' alt ='iphone 13'>  
+                 
+                  <!--  <img class="files" src='/assets/icon/favorite.jpg' alt ='dernier'>--> 
+                  </div>
+            </ion-card-header>
+
+            <ion-card-content class="ion-text-left">
+       <ion-card-title class="ion-margin-bottom">Comparez des Telephones Des Television et tous Gadget Electroniques</ion-card-title>
+                <ion-card-subtitle class="ion-text-right">score 100</ion-card-subtitle>
+                  <ion-progress-bar type="indeterminate" color="warning"></ion-progress-bar>
+            </ion-card-content>
+      </ion-card>   
+    </ion-slide>
+      
+       <!--cette deuxieme partie va repertorier produit note et score-->
+      <ion-slide>
+        <ion-card>
+              <ion-card-header>
+                    <div class="main">
+                      <img src='/assets/icon/airpod6.jpg' alt ='iphone 13'>  
+                   
+                    <!--  <img class="files" src='/assets/icon/favorite.jpg' alt ='dernier'>--> 
+                    </div>
+              </ion-card-header>
+
+              <ion-card-content class="ion-text-left">
+         <ion-card-title class="ion-margin-bottom">Comparez les derniers marques models et Qualites des produits : Partie Airpods</ion-card-title>
+                  <ion-card-subtitle class="ion-text-right">score 100</ion-card-subtitle>
+                    <ion-progress-bar type="indeterminate" color="warning"></ion-progress-bar>
+              </ion-card-content>
+        </ion-card>   
+      </ion-slide>
+      <!--television-->
+      <ion-slide>
+        <ion-card>
+              <ion-card-header>
+                    <div class="main">
+                      <img src='/assets/icon/tele5.jpg' alt ='iphone 13'>  
+                   
+                    <!--  <img class="files" src='/assets/icon/favorite.jpg' alt ='dernier'>--> 
+                    </div>
+              </ion-card-header>
+
+              <ion-card-content class="ion-text-left">
+         <ion-card-title class="ion-margin-bottom">Comparez les meilleurs marque de television des grandes marques</ion-card-title>
+                  <ion-card-subtitle class="ion-text-right">score 100</ion-card-subtitle>
+                    <ion-progress-bar type="indeterminate" color="warning"></ion-progress-bar>
+              </ion-card-content>
+        </ion-card>   
+      </ion-slide>
+
+   </ion-slides>
+    </div>
+ <div class="container">
+
+  <div class="neon">
+    <a>
+     <span></span>
+     <span></span>
+     <span></span>
+     <span></span>
+   
+   <h3> Liste Comparatif des fournisseurs </h3>
+    </a>
+   </div> 
+  
+
+    <ion-segment value="all" [(ngModel)]="selectTabs">
+      <ion-segment-button value="all">All</ion-segment-button>
+      <ion-segment-button value="favorites">Favorites</ion-segment-button>
+    </ion-segment>
+    <!--Barre de recherche -->
+    <ion-searchbar (ionInput)="FilterJSONData($event)" showCancelButton="always" [(ngModel)]="queryText">
+
+    </ion-searchbar>
+     <!--partie a rattacher avec les listeners-->
+
+     <!--Partie iphone-->
+    <ion-item>
+      <ion-grid>
+          <ion-row class="ion-align-items-center">
+              <ion-col size="3"> 
+         </ion-col>
+         <ion-col size="2">
+          <ion-button color="light" fill="clear">
+          <br>
+          </ion-button>
+        </ion-col>
+              <ion-col size="7">
+<p>
+                <ion-avatar slot="start">
+                  <img src='/assets/icon/photo_ip12.jpg' alt ='iphone 12'>  
+                </ion-avatar>
+              </p>
+                 <!--parametre de la barre de recherche-->
+                  <ion-label > 
+          
+                      <!--lien recherche-->
+                     <h6 *ngIf="selectTabs == 'all'">Iphone 12</h6>
+                      <h6>Prix : 15000$ / 12000$</h6>
+                      <h6>Note : 60 /100</h6>
+                      <h6>Qualite : Hight-level</h6>
+                      <button onclick="alert('L\'iPhone 12 est le modèle principal de la 14e génération de smartphone d\'Apple annoncé le 13 octobre 2020. Il est équipé d\'un écran de 6,1 pouces OLED HDR 60 Hz, d\'un double capteur photo avec ultra grand-angle et d\'un SoC Apple A14 Bionic compatible 5G (sub-6 GHz).')">Voir Plus</button>
+
+                      <button onclick="(function(){
+                        let para = document.createElement('h6');
+                        para.textContent = 'Paragraphe oki';
+                        document.body.appendChild(para);
+                      })();">
+                      </button>
+                    <ion-progress-bar value="0.5" color="primary"></ion-progress-bar>
+                  </ion-label>
+                 
+                  <!--icon popover-->
+
+                  <ion-buttons slot="start">
+                    <ion-menu-button color="primary" autoHide="false"></ion-menu-button>
+                  </ion-buttons>
+                      <!--ce code permettra d'afficher plus de detail sur le produit-->
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+ </ion-item>
+ <br>
+<!--elle va repertorier les notes prix et score de leur plus grande vente annuelle-->
+        <ion-item>
+          <ion-grid>
+              <ion-row class="ion-align-items-center">
+      
+                  <ion-col size="3">
+                    <p>
+                    <ion-avatar slot="start">
+                      <img src='/assets/icon/ipx.jpg' alt ='iphone 12'>  
+                    </ion-avatar>
+                  </p>
+                   
+                  </ion-col>
+                  <ion-col size="7">
+                      <ion-label >
+                        <div id='exo'>
+                     <h6>IPHONE X</h6>
+                    </div>
+                        <h6>Prix : 1270$</h6>
+                        <h6>Note : 8/10</h6>
+                        <h6>Qualite :hight level</h6>
+                        <button onclick="alert('L\'iPhone X fait parti de la onzième itération du célèbre smartphone d\'Apple. Il intègre un SoC Apple A11 Bionic gravé en 10 nm. Il dispose d\'un écran borderless de 5,8 pouces et d\'un capteur facial pour déverrouiller le smartphone.')">Voir Plus</button>
+
+                      <button onclick="(function(){
+                        let para = document.createElement('h6');
+                        para.textContent = 'Paragraphe oki';
+                        document.body.appendChild(para);
+                      })();">
+                      </button>
+                        <ion-progress-bar value="0.8" color="secondary">
+                        </ion-progress-bar>
+                      </ion-label>
+                   
+                  </ion-col>
+                  <ion-col size="2">
+                  
+                  </ion-col>
+              </ion-row>
+        </ion-grid>
+    </ion-item>
+    <br>
+    <!--on utilisera cet partie pour les rattacher a des liens pour voir plus d'options-->
+    <ion-item>
+      <ion-grid>
+          <ion-row class="ion-align-items-center">
+  
+              <ion-col size="3">
+                <p>
+                <ion-avatar slot="start">
+                  <img src='/assets/icon/ip8.jpg' alt ='iphone 12'>  
+                </ion-avatar>
+              </p>
+          
+          </ion-col>
+              <ion-col size="7">
+                  <ion-label>
+                    <h5>Iphone 8plus</h5>
+                    <h6>Prix : 2250</h6>
+                    <h6>Qualite : Hight-level</h6>
+                    <ion-progress-bar value="0.6" color="tertiary">
+                    </ion-progress-bar>
+                  </ion-label>
+                 
+                
+                      <!--ce code permettra d'afficher plus de detail sur le produit-->
+              </ion-col>
+              <ion-col size="2">
+                
+              </ion-col>
+          </ion-row>
+      </ion-grid>
+ </ion-item>
+ <br><br>
+ <!--une autre appareil-->
+ <ion-item>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">   
+          
+          </ion-col>
+          <ion-col size="7">
+            <p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/iphone-8-plus.jpg' alt ='iphone 8 plus'>  
+            </ion-avatar>
+            </p>
+              <ion-label >
+             <h6>IPHONE 8 Plus</h6>
+                <h6>Prix : 403euro</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <button onclick="alert('La onzième itération de l\'iPhone s\'appelle l\'iPhone 8. Il a été annoncé le 12 Septembre 2017 et à la particularité d\'embarquer iOS 11, un SoC A11 gravé en 10 nm et dispose de 64 ou 256 Go de Stockage.')">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+                <ion-progress-bar value="0.5" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+        
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<!--another one-->
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">   
+          
+          </ion-col>
+          <ion-col size="7">
+            <p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/iphone-7-rouge-mat.jpg' alt ='iphone 7plus'>  
+            </ion-avatar>
+            </p>
+              <ion-label >
+             <h6>IPHONE 7 Plus</h6>
+                <h6>Prix : 130000</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+        
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+ <!--Fin partie IPHONE-->
+
+ <div class="neon">
+ <a>
+  <span></span>
+  <span></span>
+  <span></span>
+  <span></span>
+
+<h3> Fournisseur samsung
+
+</h3>
+</a>
+</div>
+<!--Partie samsung-->
+
+<ion-item>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+            
+
+          </ion-col>
+          <ion-col size="7">
+            <p>
+              <ion-avatar slot="start">
+                <img src='/assets/icon/sam21.jpg' alt ='samsung 21'>  
+              </ion-avatar>
+            </p>
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Samsug Galaxie S21</h6>
+                <h6>Prix : 1700$ / 1600$</h6>
+                <h6>Note : 7/10</h6>
+                <h6>Qualite :hight level</h6>
+                <button onclick="alert('Le Samsung Galaxy S21 est le porte-étendard de la marque, succédant à la gamme S20. Il est équipé d\'un SoC Exynos 2100  d\'une batterie de 4000 mAh et de 3 capteurs photo : le principal à 12 mégapixels  un capteur de 12 mégapixels et un téléobjectif de 64 mégapixels')">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+                <ion-progress-bar value="0.6" color="danger">
+
+                </ion-progress-bar>
+              </ion-label>
+             
+          </ion-col>
+          <ion-col size="2">
+            
+
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<!--galaxie s20-->
+<br>
+<ion-item>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+  
+          </ion-col>
+          <ion-col size="7">
+            <p>
+              <ion-avatar slot="start">
+                <img src='/assets/icon/sam3.jpg' alt ='iphone 12'>  
+              </ion-avatar>
+              </p>
+
+
+              <ion-label >
+             <h6>Samsung A72</h6>
+                <h6>Prix : 2500$ / 1900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <button onclick="alert('Le Samsung Galaxy A72 est un modèle milieu de gamme de a marque abritant un SoC Qualcomm Snapdragon 720G couplé à 6 ou 8 Go de RAM et 128 ou 256 Go de stockage, extensible via microSD. A l’arrière se trouvent 4 capteurs photo : le principal de 64 mégapixels, un ultra grand-angle de 12 mégapixels, un téléobjectif de 8 mégapixels avec un zoom optique x3 et un objectif macro de 5 mégapixels. Il a une batterie de 5000 mAh compatible charge rapide (jusqu’à 25 W). Enfin il est certifié IP67.')">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+                <ion-progress-bar value="0.6" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--une autre partie-->
+<!--fin partie samsung-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/sam4.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>samsung Fold</h6>
+                <h6>Prix : 1500$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :Medium</h6>
+                <button onclick="alert('	Le Samsung Galaxy Fold est un smartphone pliable annoncé le 20 février 2019. Après des années de développement, le Fold de Samsung est la première démonstration du célèbre constructeur coréen en la matière. Il dispose de deux écrans de 7,3 pouces et 4,6 pouces.')">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+             
+          </ion-col>
+          <ion-col size="2">
+          
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/samsungtab2.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+          
+            </ion-button>
+          </ion-col>
+          <ion-col size="6">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Galaxie tab A7</h6>
+                <h6>Prix : 1100$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.5" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+         
+          </ion-col>
+          <ion-col size="2">
+                       
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/tabsam1.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+         
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>samsung Galaxie tab s7</h6>
+                <h6>Prix : 1100$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--autre model-->
+<ion-item>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/tabsam2.jpg' alt ='iphone 12'>  
+           
+            </ion-avatar>
+          </p> 
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Samsung Tab E</h6>
+                <h6>Prix : 1700$ / 1900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+             
+          </ion-col>
+          <ion-col size="2">
+          
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+
+<br>
+<!--une autre model-->
+<div class="neon">
+  <a>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+ 
+ <h3> Model Mixte Huawei OnePlus ... </h3>
+ </a>
+ </div>
+
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/sam01.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+           
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Huawei p 30Pro</h6>
+                <h6>Prix : 1700$ / 1900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.10" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+            
+          </ion-col>
+          <ion-col size="2">
+          
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--une autre marque-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/huaw4.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+             
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Huawei p 40pro</h6>
+                <h6>Prix : 1300$ / 1200$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.2" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+
+
+<!--Partie divers-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/huaw1.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Huawei p 30lite</h6>
+                <h6>Prix : 3000$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+           
+          </ion-col>
+          <ion-col size="2">
+         
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--another phone -->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/oneplus4.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">oneplus 8</h6>
+                <h6>Prix : 700$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :Medium</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+           
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--repere barhama-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/oneplus3.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+           
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>OnePlus 7 pro</h6>
+                <h6>Prix : 700$ / 500$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+             
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--oneplus-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/onplus1.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+           
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>OnePlus 7pro</h6>
+                <h6>Prix : 1500$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+            
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/redmi1.jpg' alt ='redmi'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="film"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">RedMie</h6>
+                <h6>Prix : 1000$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+          
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<!--autre model-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/op21.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>      
+            <ion-button color="light" fill="clear">
+              <ion-icon slot="icon-only" name="film"></ion-icon>
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>OnePlus 7t</h6>
+                <h6>Prix : 1500$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--autre models-->
+
+<!--Honnor One Plus huawei -->
+
+ <!--ici on compare les priix des Televiseur-->
+<div class="neon">
+  <a>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+ 
+ <h1>Liste des Televisions</h1 >
+ </a>
+ </div>
+
+ <ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/tele0.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h5 *ngIf="selectTabs == 'all'"> LG </h5>
+                <h6>Prix : 1700$ / 1600$</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.6" color="dark">
+
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+          
+
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/tele4.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+        </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Samsung smart</h6>
+                <h6>Prix : 1500$ / 1100$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.6" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+            
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--autre model tele-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+            <p>
+              <ion-avatar slot="start">
+                <img src='/assets/icon/tele3.jpg' alt ='iphone 12'>  
+              </ion-avatar>
+            </p>
+
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Philipps</h6>
+                <h6>Prix : 1300$ / 700$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--autre model tele-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/tele5.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+        </ion-col>
+           
+          <ion-col size="7">
+              <ion-label >
+             <h6>Phillips led</h6>
+                <h6>Prix : 1500$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+             
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--autre model tele-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/tele3.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+          
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Phillips smart 24</h6>
+                <h6>Prix : 1500$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.4" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--autre model tele-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/tele2.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Oled televiseur android</h6>
+                <h6>Prix : 1500$ / 900$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+         
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--autre model tele-->
+<!--Liste des Gadget Electronique-->
+<div class="neon">
+  <a>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+ 
+ <h1>Liste  Des Gadgets Electronique</h1 >
+ </a>
+ </div>
+ <br>
+ <ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/airpod1.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+            
+            </ion-button>
+
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h5 *ngIf="selectTabs == 'all'"> Airdpod  </h5>
+                <h6>Prix : 170$ / 600$</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.8" color="primary">
+
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+           
+
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<br>
+<!--autre model tele-->
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}}
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/airpod5.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+              
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Airpod Air</h6>
+                <h6>Prix : 300$ / 450$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+         
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<!--karouz diayprek-->
+<ion-item>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/airpod6.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+           <!--  -->
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Airdpods Max Pro</h6>
+                <h6>Prix : 629$ </h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <button onclick="alert('Un Model unique d\'ecouteur vient bousculer le marche des airpods avec ses ecouteurs sans fil et sans bruit 7 generation estime a 629$  ')">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+              
+          </ion-col>
+          <ion-col size="2">
+          
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}} 
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/l21.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            
+
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Airpod L21</h6>
+                <h6>Prix : 90$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+           
+          </ion-col>
+          <ion-col size="2">
+          
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}} 
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/power.jpg' alt ='power bank'>  
+            </ion-avatar>
+          </p>
+
+            <ion-button color="light" fill="clear">
+          
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Power Bank</h6>
+                <h6>Prix : 50$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+           
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<ion-item>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+
+         <p>
+
+            <ion-avatar slot="start">
+              <img src='/assets/icon/ultra.png' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+          
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Tele Asus Ultra large</h6>
+                <h6>Prix : 1500$ / 1650$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <button onclick="alert('Television de type Grande format led ecran de qualite superieur' )">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+            
+          </ion-col>
+          <ion-col size="2">
+          
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}} 
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+        <p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/support1.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+</p>
+           
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">Support Ordinateur</h6>
+                <h6>Prix : 90$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+             
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}} 
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+<p>
+            <ion-avatar slot="start">
+              <img src='/assets/icon/refroidisseur.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Refroidisseur Pc</h6>
+                <h6>Prix : 150$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.5" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+            
+          </ion-col>
+          <ion-col size="2">
+           
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+<div class="neon">
+  <a>
+   <span></span>
+   <span></span>
+   <span></span>
+   <span></span>
+ 
+ <h1>Ordinateur Portable </h1 >
+ </a>
+ </div>
+ <ion-item>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+
+         <p>
+
+            <ion-avatar slot="start">
+              <img src='/assets/icon/macbook1.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+              
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">MacBook pro</h6>
+                <h6>Prix : 1500$ / 2650$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+                <button onclick="alert('MacBook pro air avec son design et capacite il pesse lourd sur le marche avec ces differentes model il devance toutes les autres en matiere de performance')">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+            
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+<!--kaporal karouz-->
+<ion-item>
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+
+         <p>
+
+            <ion-avatar slot="start">
+              <img src='/assets/icon/macbookpro.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6 *ngIf="selectTabs == 'all'">MacBook Retina</h6>
+                <h6>Prix : 2500$</h6>
+                <h6>Note : 5/10</h6>
+                <h6>Qualite :hight level</h6>
+
+                <button onclick="alert('Une marque de qualite creme de la technologie MacBook retina est d\'une qualite superieur avec son icore 9 et 256ssd il est largement adapter au travaille des professionels ')">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+                <ion-progress-bar value="0.8" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+             
+          </ion-col>
+          <ion-col size="2">
+         
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+
+
+<ion-item >
+  
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+
+         <p>
+
+            <ion-avatar slot="start">
+              <img src='/assets/icon/samsungbook.jpg' alt ='iphone 12'>  
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+           
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Samsung Pc</h6>
+                <h6>Prix : 11500$</h6>
+                <h6>Note : 7/10</h6>
+                <h6>Qualite :hight level</h6>
+                <button onclick="alert('Pc Samsung d\'un montant de 11500 15 pouce intel memory 1Tb classe 8em des mailleurs ordinateur')">Voir Plus</button>
+
+                <button onclick="(function(){
+                  let para = document.createElement('h6');
+                  para.textContent = 'Paragraphe oki';
+                  document.body.appendChild(para);
+                })();">
+                </button>
+
+
+                <ion-progress-bar value="0.7" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+           <!--
+              <span (click)="voirPlus()" class="voirplus">
+              voirplus <ion-icon name="chevron-forward"></ion-icon>
+            </span>
+-->
+
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+
+
+
+<ion-item lines="none" (click)="selectVal(item.name)" *ngFor="let item of jsonData">{{items}} 
+  <ion-grid>
+      <ion-row class="ion-align-items-center">
+
+          <ion-col size="3">
+
+         <p>
+
+            <ion-avatar slot="start">
+            <!-- <img src='/assets/icon/.jpg' alt ='honnor pc'>  --> 
+            </ion-avatar>
+          </p>
+            <ion-button color="light" fill="clear">
+         
+            </ion-button>
+          </ion-col>
+          <ion-col size="7">
+              <ion-label >
+             <h6>Apple Touch</h6>
+                <h6>Prix : 1500$ / 750$</h6>
+                <h6>Note : 8/10</h6>
+                <h6>Qualite :hight level</h6>
+                <ion-progress-bar value="0.8" color="secondary">
+                </ion-progress-bar>
+              </ion-label>
+             
+          </ion-col>
+          <ion-col size="2">
+            
+          </ion-col>
+      </ion-row>
+</ion-grid>
+</ion-item>
+ <!--div principal-->
+ </div>
+<br>
+<br>
+<!-- barre de recherche-->
+ </ion-content>
+ 
+

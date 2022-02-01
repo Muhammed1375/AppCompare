@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Backend</ion-title>
+    <ion-label>Administrateur</ion-label>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list lines="full">
+        <ion-item>
+            <ion-label position="floating">Nom</ion-label>
+            <ion-input [(ngModel)]="nom" type="text"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label position="floating">Type_de_produit</ion-label>
+          <ion-input [(ngModel)]="type_de_produit" type="text"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label position="floating">prix</ion-label>
+        <ion-input [(ngModel)]="prix" type="text"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Model</ion-label>
+      <ion-input [(ngModel)]="model" type="text"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label position="floating">Marque</ion-label>
+    <ion-input [(ngModel)]="marque" type="text"></ion-input>
+    <ion-row>
+        <ion-col>
+            <ion-button type="button" (click)="addarticles()" color="primary" shape="full" expand="block">
+              Ajouter Produit
+            </ion-button>
+        </ion-col>
+    </ion-row>
+</ion-item>
+
+    </ion-list>
+</ion-content>
