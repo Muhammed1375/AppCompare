@@ -1,0 +1,7 @@
+{
+  "name": "AppCompare",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}
